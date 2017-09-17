@@ -17,7 +17,7 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 # import os
-# import sys
+import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
 
@@ -144,12 +144,12 @@ latex_elements = {
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-try:
-    from data_gen_pyscaf import __version__ as version
-except ImportError:
-    pass
-else:
-    release = version
+# try:
+#     from data_gen_pyscaf import __version__ as version
+# except ImportError:
+#     pass
+# else:
+#     release = version
 
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -183,10 +183,10 @@ texinfo_documents = [
 ]
 
 # -- External mapping ------------------------------------------------------------
-python_version = '.'.join(map(str, sys.version_info[0:2]))
+# python_version = '.'.join(map(str, sys.version_info[0:2]))
 intersphinx_mapping = {
     'sphinx': ('http://sphinx.pocoo.org', None),
-    'python': ('http://docs.python.org/' + python_version, None),
+    # 'python': ('http://docs.python.org/' + python_version, None),
     'matplotlib': ('http://matplotlib.sourceforge.net', None),
     'numpy': ('http://docs.scipy.org/doc/numpy', None),
     'sklearn': ('http://scikit-learn.org/stable', None),
