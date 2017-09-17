@@ -15,7 +15,8 @@ Welcome to data-gen's documentation!
 ============
 Introduction
 ============
-Welcome to a brand new package.
+Welcome to a brand new package
+.. autofunction:: data_gen.data_gen.skeleton.fib
 
 Indices and tables
 ==================

@@ -21,7 +21,7 @@ import argparse
 import sys
 import logging
 
-from data_gen_pyscaf import __version__
+from data_gen import __version__
 
 __author__ = "Adam Webber"
 __copyright__ = "Adam Webber"

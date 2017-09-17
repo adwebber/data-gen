@@ -16,10 +16,23 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
+import os
 import sys
-# sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('data_gen'))
 
+if os.environ.get('READTHEDOCS', None) == 'True':
+    import inspect
+    from sphinx import apidoc
+
+    __location__ = os.path.join(os.getcwd(), os.path.dirname(
+     inspect.getfile(inspect.currentframe())))
+
+    output_dir = os.path.join(__location__, "../docs/api")
+    module_dir = os.path.join(__location__, "../data_gen")
+    cmd_line_template = "sphinx-apidoc -f -o {outputdir} {moduledir}"
+    cmd_line = cmd_line_template.format(
+        outputdir=output_dir, moduledir=module_dir)
+    apidoc.main(cmd_line.split(" "))
 
 # -- General configuration ------------------------------------------------
 
@@ -183,10 +196,10 @@ texinfo_documents = [
 ]
 
 # -- External mapping ------------------------------------------------------------
-# python_version = '.'.join(map(str, sys.version_info[0:2]))
+python_version = '.'.join(map(str, sys.version_info[0:2]))
 intersphinx_mapping = {
     'sphinx': ('http://sphinx.pocoo.org', None),
-    # 'python': ('http://docs.python.org/' + python_version, None),
+    'python': ('http://docs.python.org/' + python_version, None),
     'matplotlib': ('http://matplotlib.sourceforge.net', None),
     'numpy': ('http://docs.scipy.org/doc/numpy', None),
     'sklearn': ('http://scikit-learn.org/stable', None),
