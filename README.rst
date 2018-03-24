@@ -3,13 +3,13 @@ data-gen
 ========
 
 
-Add a short description here!
+A data generation toolkit.
 
 
 Description
 ===========
 
-A longer description of your project goes here...
+Toy data for machine learning projects.
 
 
 Note
